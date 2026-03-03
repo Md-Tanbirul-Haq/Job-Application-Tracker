@@ -52,7 +52,7 @@
 
 
             <section id="total_job" class="">
-                <div id="job_1" class="bg-white px-5 py-5 rounded-lg mt-5">
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_1">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">Mobile First Corp</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -62,22 +62,24 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">React Native Developer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $130 - $175</p>
-                    <button id="update_1" class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Build cross-platform mobile applications using React Native. Work on products
                         used
                         by millions of
                         users worldwide.</p>
 
                     <div class="flex gap-2">
-                        <button id="interview_1"
-                            class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button id="rejected_1" class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_1','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_1','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
 
 
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_2">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">WebFlow Agency</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -87,19 +89,20 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">Web Designer & Developer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Create stunning web experiences for high-profile clients. Must have portfolio
                         and
                         experience with modern web design
                         trends.</p>
 
-                    <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
-                    </div>
+                    <button onclick="update_job('job_2','interview_btn','update_')"
+                        class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                    <button onclick="update_job('job_2','rejected_btn','update_')"
+                        class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
 
                 </div>
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_3">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">WebFlow Agency</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -109,7 +112,7 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">UI/UX Engineer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $100 - $150</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Create beautiful and functional user interfaces for our suite of products.
                         Strong
                         design skills and frontend development
@@ -117,12 +120,15 @@
                     </p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_3','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_3','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_4">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">CloudFirst </h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -132,20 +138,22 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">Backend Developer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Design and maintain scalable backend systems using Python and AWS. Work with
                         modern
                         DevOps practices and cloud
                         infrastructure.</p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_4','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_4','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
 
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_5">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">Innovation Labs</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -155,20 +163,22 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">UI/UX Engineer</p>
                     <p class="my-5 text-neutral-500/50">Austin . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Create beautiful and functional user interfaces for our suite of products.
                         Strong
                         design skills and frontend development
                         expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_5','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_5','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
 
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_6">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">MegaCorp Solutions</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -178,21 +188,23 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">Backend Developer</p>
                     <p class="my-5 text-neutral-500/50">New York . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Design and maintain scalable backend systems using Python and AWS. Work with
                         modern
                         DevOps practices and cloud
                         infrastructure.</p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_6','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_6','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
 
 
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_7">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">Mobile First Corp</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -202,27 +214,23 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">Backend Developer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Design and maintain scalable backend systems using Python and AWS. Work with
                         modern
                         DevOps practices and cloud
                         infrastructure.</p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_7','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_7','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
 
 
-
-
-
-
-
-
-                <div class="bg-white px-5 py-5 rounded-lg mt-5">
+                <div class="bg-white px-5 py-5 rounded-lg mt-5 job_8">
                     <div class="flex justify-between">
                         <h1 class="text-2xl font-bold">Mobile First Corp</h1>
                         <button class="bg-gray-200 hover:bg-gray-300 w-[30px] h-[30px] rounded-full">
@@ -232,15 +240,17 @@
                     </div>
                     <p class="text-xl text-neutral-500/50">UI/UX Engineer</p>
                     <p class="my-5 text-neutral-500/50">Remote . Full-time . $130 - $175</p>
-                    <button class="btn font-bold">NOT APPLIED</button>
+                    <button class="btn font-bold update_">NOT APPLIED</button>
                     <p class="mt-2 mb-3">Create beautiful and functional user interfaces for our suite of products.
                         Strong
                         design skills and frontend development
                         expertise required.</p>
 
                     <div class="flex gap-2">
-                        <button class="btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
-                        <button class="btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
+                        <button onclick="update_job('job_8','interview_btn','update_')"
+                            class="interview_btn btn  btn-outline btn-success w-[120px] font-bold">INTERVIEW</button>
+                        <button onclick="update_job('job_8','rejected_btn','update_')"
+                            class=" rejected_btn btn  btn-outline btn-error w-[120px] font-bold">REJECTED</button>
                     </div>
 
                 </div>
@@ -250,7 +260,7 @@
 
             <section id="interview_job" class="mt-5">
 
-                <div class="bg-white flex flex-col  items-center  py-20 ">
+                <div id="No_interview" class="bg-white flex flex-col  items-center  py-20 ">
 
                     <img src="image/1.png" alt="">
                     <h1 class="text-2xl font-bold">No jobs available</h1>
@@ -258,14 +268,24 @@
 
                 </div>
 
+                <div id="interview_found">
+
+                </div>
+
             </section>
 
             <section id="rejected_job" class="mt-5">
-                <div class="bg-white flex flex-col  items-center  py-20 ">
+                <div id="No_reject" class="bg-white flex flex-col  items-center  py-20 ">
 
                     <img src="image/1.png" alt="">
                     <h1 class="text-2xl font-bold">No jobs available</h1>
                     <p>Check back soon for new job opportunities</p>
+
+                </div>
+
+                <div id="reject_found">
+
+
 
                 </div>
             </section>
