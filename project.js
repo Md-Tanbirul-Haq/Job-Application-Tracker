@@ -56,10 +56,28 @@ function update_job(job_class, button_class, update) {
             rejected = rejected - 1
             rejected_.innerText = rejected
         }
+
+        if (interview > 0) {
+            document.getElementById('No_interview').classList.add('hidden')
+        }
+
+        if (rejected == 0) {
+            document.getElementById('No_reject').classList.remove('hidden')
+        }
+
+        // document.getElementById('total_jobs__').classList.add('hidden')
+        // document.getElementById('total_interview').classList.remove('hidden').innerText = `${interview} of 8 jobs`
+        // document.getElementById('total_jobs_number').classList.add('hidden')
+
+        const job = document.querySelector(`.${job_class}`)
+        // const job_1 = job.cloneNode(true)
+        // document.getElementById('interview_found').appendChild(job_1)
+        document.getElementById('interview_found').appendChild(job)
     }
     else if (test_ == "REJECTED") {
         document.querySelector(`.${job_class} .${update}`).innerText = "REJECTED"
         document.querySelector(`.${job_class} .${update}`).classList.add('btn-error',)
+
         if (interview > 0) {
             interview = interview - 1
             interview_.innerText = interview
@@ -67,6 +85,19 @@ function update_job(job_class, button_class, update) {
 
         rejected = rejected + 1
         rejected_.innerText = rejected
+
+        if (rejected > 0) {
+            document.getElementById('No_reject').classList.add('hidden')
+        }
+
+        if (interview == 0) {
+            document.getElementById('No_interview').classList.remove('hidden')
+        }
+
+        const job = document.querySelector(`.${job_class}`)
+        // const job_1 = job.cloneNode(true)
+        // document.getElementById('reject_found').appendChild(job_1)
+        document.getElementById('reject_found').appendChild(job)
 
     }
 
