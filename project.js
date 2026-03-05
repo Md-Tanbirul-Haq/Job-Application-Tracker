@@ -78,6 +78,7 @@ function update_job(job_class, button_class, update) {
     if (test_ == "INTERVIEW") {
         if (status != "interview") {
             document.querySelector(`.${job_class} .${update}`).innerText = "INTERVIEW"
+            document.querySelector(`.${job_class} .${update}`).classList.remove('btn-error')
             document.querySelector(`.${job_class} .${update}`).classList.add('btn-success')
 
             interview = interview + 1
@@ -93,15 +94,26 @@ function update_job(job_class, button_class, update) {
             if (rejected == 0) {
                 document.getElementById('No_reject').classList.remove('hidden')
             }
+
+            let job_ = document.querySelector(`#reject_found .${job_class}`)
+
+            if (job_) {
+                job_.remove()
+            }
+
             const job = document.querySelector(`.${job_class}`)
-            document.getElementById('interview_found').appendChild(job)
+
+            const job_1 = job.cloneNode(true)
+            document.getElementById('interview_found').appendChild(job_1)
+
             job.dataset.status = "interview"
         }
     }
     else if (test_ == "REJECTED") {
         if (status != "rejected") {
             document.querySelector(`.${job_class} .${update}`).innerText = "REJECTED"
-            document.querySelector(`.${job_class} .${update}`).classList.add('btn-error',)
+            document.querySelector(`.${job_class} .${update}`).classList.remove('btn-success')
+            document.querySelector(`.${job_class} .${update}`).classList.add('btn-error')
 
             if (status == "interview") {
                 interview = interview - 1
@@ -119,10 +131,15 @@ function update_job(job_class, button_class, update) {
                 document.getElementById('No_interview').classList.remove('hidden')
             }
 
+            let job_ = document.querySelector(`#interview_found .${job_class}`)
+
+            if (job_) {
+                job_.remove()
+            }
+
             const job = document.querySelector(`.${job_class}`)
-            // const job_1 = job.cloneNode(true)
-            // document.getElementById('reject_found').appendChild(job_1)
-            document.getElementById('reject_found').appendChild(job)
+            const job_1 = job.cloneNode(true)
+            document.getElementById('reject_found').appendChild(job_1)
 
             job.dataset.status = "rejected"
         }
