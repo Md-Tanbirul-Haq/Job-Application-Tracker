@@ -4,6 +4,9 @@ let rejected_job = document.getElementById('rejected_job')
 interview_job.classList.add('hidden')
 rejected_job.classList.add('hidden')
 
+let interview_count = 0
+let reject_count = 0
+
 document.getElementById('total_btn').addEventListener('click', function () {
 
     total_job.classList.remove('hidden')
@@ -13,6 +16,8 @@ document.getElementById('total_btn').addEventListener('click', function () {
     document.getElementById('total_btn').classList.add('btn-info')
     document.getElementById('interview_btn').classList.remove('btn-info')
     document.getElementById('rejected_btn').classList.remove('btn-info')
+
+    document.getElementById('job_number').innerText = ""
 
 })
 document.getElementById('interview_btn').addEventListener('click', function () {
@@ -26,6 +31,15 @@ document.getElementById('interview_btn').addEventListener('click', function () {
     document.getElementById('total_btn').classList.remove('btn-info')
 
 
+    let interview_number = parseInt(document.getElementById('interview').innerText)
+
+    if (interview_number > 0) {
+        document.getElementById('job_number').innerText = `${interview_number} of `
+    }
+
+
+
+
 })
 document.getElementById('rejected_btn').addEventListener('click', function () {
 
@@ -36,6 +50,17 @@ document.getElementById('rejected_btn').addEventListener('click', function () {
     document.getElementById('rejected_btn').classList.add('btn-info')
     document.getElementById('total_btn').classList.remove('btn-info')
     document.getElementById('interview_btn').classList.remove('btn-info')
+
+    document.getElementById('job_number').innerText = ""
+
+    let reject___number = parseInt(document.getElementById('rejected').innerText)
+
+
+    if (reject___number > 0) {
+        document.getElementById('job_number').innerText = `${reject___number} of `
+    }
+
+
 })
 
 let interview_ = document.getElementById('interview')
@@ -44,64 +69,67 @@ let rejected_ = document.getElementById('rejected')
 let rejected = parseInt(rejected_.innerText)
 
 function update_job(job_class, button_class, update) {
+
+    const job = document.querySelector(`.${job_class}`)
+    let status = job.dataset.status
+
     const test_ = document.querySelector(`.${job_class} .${button_class}`).innerText
 
     if (test_ == "INTERVIEW") {
-        document.querySelector(`.${job_class} .${update}`).innerText = "INTERVIEW"
-        document.querySelector(`.${job_class} .${update}`).classList.add('btn-success')
+        if (status != "interview") {
+            document.querySelector(`.${job_class} .${update}`).innerText = "INTERVIEW"
+            document.querySelector(`.${job_class} .${update}`).classList.add('btn-success')
 
-        interview = interview + 1
-        interview_.innerText = interview
-        if (rejected > 0) {
-            rejected = rejected - 1
-            rejected_.innerText = rejected
+            interview = interview + 1
+            interview_.innerText = interview
+            if (status == "rejected") {
+                rejected = rejected - 1
+                rejected_.innerText = rejected
+            }
+
+            if (interview > 0) {
+                document.getElementById('No_interview').classList.add('hidden')
+            }
+            if (rejected == 0) {
+                document.getElementById('No_reject').classList.remove('hidden')
+            }
+            const job = document.querySelector(`.${job_class}`)
+            document.getElementById('interview_found').appendChild(job)
+            job.dataset.status = "interview"
         }
-
-        if (interview > 0) {
-            document.getElementById('No_interview').classList.add('hidden')
-        }
-
-        if (rejected == 0) {
-            document.getElementById('No_reject').classList.remove('hidden')
-        }
-
-        // document.getElementById('total_jobs__').classList.add('hidden')
-        // document.getElementById('total_interview').classList.remove('hidden').innerText = `${interview} of 8 jobs`
-        // document.getElementById('total_jobs_number').classList.add('hidden')
-
-        const job = document.querySelector(`.${job_class}`)
-        // const job_1 = job.cloneNode(true)
-        // document.getElementById('interview_found').appendChild(job_1)
-        document.getElementById('interview_found').appendChild(job)
     }
     else if (test_ == "REJECTED") {
-        document.querySelector(`.${job_class} .${update}`).innerText = "REJECTED"
-        document.querySelector(`.${job_class} .${update}`).classList.add('btn-error',)
+        if (status != "rejected") {
+            document.querySelector(`.${job_class} .${update}`).innerText = "REJECTED"
+            document.querySelector(`.${job_class} .${update}`).classList.add('btn-error',)
 
-        if (interview > 0) {
-            interview = interview - 1
-            interview_.innerText = interview
+            if (status == "interview") {
+                interview = interview - 1
+                interview_.innerText = interview
+            }
+
+            rejected = rejected + 1
+            rejected_.innerText = rejected
+
+            if (rejected > 0) {
+                document.getElementById('No_reject').classList.add('hidden')
+            }
+
+            if (interview == 0) {
+                document.getElementById('No_interview').classList.remove('hidden')
+            }
+
+            const job = document.querySelector(`.${job_class}`)
+            // const job_1 = job.cloneNode(true)
+            // document.getElementById('reject_found').appendChild(job_1)
+            document.getElementById('reject_found').appendChild(job)
+
+            job.dataset.status = "rejected"
         }
-
-        rejected = rejected + 1
-        rejected_.innerText = rejected
-
-        if (rejected > 0) {
-            document.getElementById('No_reject').classList.add('hidden')
-        }
-
-        if (interview == 0) {
-            document.getElementById('No_interview').classList.remove('hidden')
-        }
-
-        const job = document.querySelector(`.${job_class}`)
-        // const job_1 = job.cloneNode(true)
-        // document.getElementById('reject_found').appendChild(job_1)
-        document.getElementById('reject_found').appendChild(job)
 
     }
 
-    console.log(test_)
+
 
 }
 
