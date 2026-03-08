@@ -7,6 +7,8 @@ rejected_job.classList.add('hidden')
 let interview_count = 0
 let reject_count = 0
 
+
+
 document.getElementById('total_btn').addEventListener('click', function () {
 
     total_job.classList.remove('hidden')
@@ -36,6 +38,9 @@ document.getElementById('interview_btn').addEventListener('click', function () {
     if (interview_number > 0) {
         document.getElementById('job_number').innerText = `${interview_number} of `
     }
+    else {
+        document.getElementById('job_number').innerText = ""
+    }
 
 
 
@@ -54,10 +59,11 @@ document.getElementById('rejected_btn').addEventListener('click', function () {
     document.getElementById('job_number').innerText = ""
 
     let reject___number = parseInt(document.getElementById('rejected').innerText)
-
-
     if (reject___number > 0) {
         document.getElementById('job_number').innerText = `${reject___number} of `
+    }
+    else {
+        document.getElementById('job_number').innerText = ""
     }
 
 
@@ -174,6 +180,17 @@ function delete_job(job_class) {
             document.getElementById('No_interview').classList.remove('hidden')
         }
 
+
+        let interview_number = parseInt(document.getElementById('interview').innerText)
+
+        if (interview_number > 0) {
+            document.getElementById('job_number').innerText = `${interview_number} of `
+        }
+        else {
+            document.getElementById('job_number').innerText = ""
+        }
+
+
     }
     else if (status == "rejected") {
         rejected = rejected - 1
@@ -186,6 +203,13 @@ function delete_job(job_class) {
 
         if (rejected == 0) {
             document.getElementById('No_reject').classList.remove('hidden')
+        }
+        let reject___number = parseInt(document.getElementById('rejected').innerText)
+        if (reject___number > 0) {
+            document.getElementById('job_number').innerText = `${reject___number} of `
+        }
+        else {
+            document.getElementById('job_number').innerText = ""
         }
     }
 
