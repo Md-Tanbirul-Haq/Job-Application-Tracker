@@ -150,3 +150,19 @@ function update_job(job_class, button_class, update) {
 
 }
 
+function delete_job(job_class) {
+
+    const job = document.querySelector(`.${job_class}`)
+    let status = job.dataset.status
+    console.log(status)
+    if (status == "not_applied") {
+        job.remove()
+        const total = document.getElementById('total')
+        let total_job = parseInt(total.innerText) - 1
+        total.innerText = total_job
+        document.getElementById('total_job_').innerText = total_job
+        console.log("Find Not Interview")
+    }
+
+}
+
