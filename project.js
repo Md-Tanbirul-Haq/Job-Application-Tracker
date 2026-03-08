@@ -146,22 +146,47 @@ function update_job(job_class, button_class, update) {
 
     }
 
-
-
 }
 
 function delete_job(job_class) {
-
+    const total = document.getElementById('total')
+    let total_job = parseInt(total.innerText)
     const job = document.querySelector(`.${job_class}`)
     let status = job.dataset.status
-    console.log(status)
+
     if (status == "not_applied") {
         job.remove()
-        const total = document.getElementById('total')
-        let total_job = parseInt(total.innerText) - 1
+        total_job = total_job - 1
         total.innerText = total_job
         document.getElementById('total_job_').innerText = total_job
-        console.log("Find Not Interview")
+
+    }
+    else if (status == "interview") {
+        interview = interview - 1
+        interview_.innerText = interview
+        total_job = total_job - 1
+        total.innerText = total_job
+        document.getElementById('total_job_').innerText = total_job
+        job.remove()
+        document.querySelector(`#interview_job .${job_class}`).remove()
+
+        if (interview == 0) {
+            document.getElementById('No_interview').classList.remove('hidden')
+        }
+
+    }
+    else if (status == "rejected") {
+        rejected = rejected - 1
+        rejected_.innerText = rejected
+        total_job = total_job - 1
+        total.innerText = total_job
+        document.getElementById('total_job_').innerText = total_job
+        job.remove()
+        document.querySelector(`#rejected_job .${job_class}`).remove()
+
+        if (rejected == 0) {
+            document.getElementById('No_reject').classList.remove('hidden')
+        }
     }
 
 }
